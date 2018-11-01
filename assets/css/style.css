@@ -1,0 +1,15 @@
+#giphy-container {
+    width: 25%;
+    display: inline-block;
+    margin: auto;    
+    text-align: center;
+    padding:20px;
+}
+
+.gif {
+    max-width: 355px;
+}
+
+#result-container {
+    width: 1100px;
+}
