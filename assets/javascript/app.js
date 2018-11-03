@@ -1,12 +1,16 @@
 var giphyArray = ["Allen Iverson", "Stephen Curry", "Kobe Bryant", "Kyrie Irving", "Jeremy Lin"];
 
-$("#submit").on("click", function (event) {
+function displayPlayerGiphy() {
     event.preventDefault();
 
     //create a variable to hold user input
     var userInput = $("#giphy-search").val().trim();
+    giphyArray.push(userInput);
+    renderButtons();
     var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=7kLHfanO6U5efm8hQz8f1qYF3UqVv6lv&q=" + userInput + "&limit=10";
-    var giphyButton = 
+    // var giphyButton = 
+
+
     //ajax request
     $.ajax({
         url: queryURL,
@@ -73,7 +77,7 @@ $("#submit").on("click", function (event) {
         });
     });
 
-});
+};
 
 // Function for displaying players giphy
 function renderButtons() {
@@ -99,5 +103,9 @@ function renderButtons() {
     }
 };
 
-renderButtons();
+//giphy button to display giphy
+$(document).on("click", "#submit", displayPlayerGiphy);
+$(document).on("click", ".giphy-btn", displayPlayerGiphy);
+
+
 
