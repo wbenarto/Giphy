@@ -1,5 +1,76 @@
+.jumbotron-default {
+    border-bottom: solid lightblue 5px;
+    background-image: url('C:Users/wbena/Documents/Homeworks/HW6/Giphy/assets/images/nba-wallpaper.jpg');
+    background-size: 70%;
+    padding: 0;
+}
+
+.container {
+    margin-top: 30px;
+    margin-left: 100px;
+}
+
+#result-container {
+    width: 1100px;
+}
+
+h1 {
+    font-family: 'Russo One', sans-serif;
+    color: white;
+    padding-top: 30px;
+    font-size:48px;
+}
+h2 {
+    padding-top: 10px;
+    font-family: 'Baloo Bhaijaan', cursive;
+    color: black;
+}
+
+/* form control */
+.form-control {
+    width: 400px;
+}
+
+label {
+    color: white;
+}
+button#submit {
+    background: black;
+    border-radius: 20px;
+    color: white;
+    font-family: 'Bangers', cursive;
+    font-size: 24px;
+}
+
+div#welcome {
+    margin: auto;
+    width: auto;
+    height: 450px;
+}
+
+div#buttons-view {
+    width: 1000px;
+}
+
+.giphy-btn {
+    padding: 0 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-color: blue;
+    border-radius: 20px;
+    font-size: 20px;
+    background-color: #d10d3e;
+    color: white;
+}
+
+#images {
+    margin: 20px 160px;
+    
+}
+
 #giphy-container {
-    width: 25%;
+    width: 380px;
+    height: 400px;
     display: inline-block;
     margin: auto;    
     text-align: center;
@@ -10,6 +81,14 @@
     max-width: 355px;
 }
 
-#result-container {
-    width: 1100px;
+#titleP {
+    margin-top:10px;
+    text-align: left;
+    font-family: 'Baloo Bhaijaan', cursive;
+    font-size: 20px;
+}
+
+#ratingP {
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
 }

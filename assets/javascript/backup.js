@@ -1,10 +1,15 @@
-var giphyArray = ["Stephen Curry", "Jalen Brown" , "Luka Doncic", "Jeremy Lin", "Javale McGee"];
+var giphyArray = ["Allen Iverson", "Stephen Curry", "Kobe Bryant", "Kyrie Irving", "Jeremy Lin"];
 
 function displayPlayerGiphy() {
+    event.preventDefault();
 
     //create a variable to hold user input
-    var playerGiphy = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=7kLHfanO6U5efm8hQz8f1qYF3UqVv6lv&q=" + playerGiphy + "&limit=12";
+    var userInput = $("#giphy-search").val().trim();
+    giphyArray.push(userInput);
+    renderButtons();
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=7kLHfanO6U5efm8hQz8f1qYF3UqVv6lv&q=" + userInput + "&limit=10";
+    // var giphyButton = 
+
 
     //ajax request
     $.ajax({
@@ -39,19 +44,11 @@ function displayPlayerGiphy() {
             //append giphyImg to giphyDiv
             giphyDiv.prepend(giphyImg)
 
-            //append title onto giphy div
-            var title = result[i].title;
-            var titleP = $("<p>").text("Title: " + title);
-            titleP.attr('id', "titleP");
-            giphyDiv.append(titleP);
-
             //append rating onto giphy div
             var rating = result[i].rating;
             console.log(rating);
             var ratingP = $("<p>").text("Rating: " + rating);
-            ratingP.attr('id', "ratingP");
-            giphyDiv.append(ratingP);
-
+            giphyDiv.append(ratingP)
 
             //appending download button
             // var download = $("<a href='" + result[i].images.original.url + "' download>")
@@ -63,6 +60,7 @@ function displayPlayerGiphy() {
 
             //prepend all giphy on top of seaches
             $("#images").prepend(giphyDiv);
+
         }
 
         //animate gif on click
@@ -80,7 +78,6 @@ function displayPlayerGiphy() {
     });
 
 };
-
 
 // Function for displaying players giphy
 function renderButtons() {
@@ -106,22 +103,9 @@ function renderButtons() {
     }
 };
 
-$("#submit").on("click", function(event){
-    event.preventDefault();
-    
-    var playerGiphy = $("#giphy-search").val().trim();
-    giphyArray.push(playerGiphy);
-    renderButtons();
-})
-
-
 //giphy button to display giphy
-$(document).ready(function() {
-    $(document).on("click", ".giphy-btn", displayPlayerGiphy);
-    renderButtons();
-});
-
-
+$(document).on("click", "#submit", displayPlayerGiphy);
+$(document).on("click", ".giphy-btn", displayPlayerGiphy);
 
 
 
