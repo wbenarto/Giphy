@@ -1,6 +1,6 @@
 .jumbotron-default {
     border-bottom: solid lightblue 5px;
-    background-image: url('C:Users/wbena/Documents/Homeworks/HW6/Giphy/assets/images/nba-wallpaper.jpg');
+    background-image: url('../images/nba-wallpaper.jpg');
     background-size: 70%;
     padding: 0;
 }
